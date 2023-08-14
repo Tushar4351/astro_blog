@@ -1,0 +1,49 @@
+---
+import ThemeToggler from "./ThemeToggler.astro";
+---
+
+<nav>
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+
+    <li>
+      {/** Link points nowhere for now*/}
+      <a href="/blogs/philosophies">Philosophies</a>
+    </li>
+
+    <li>
+      {/** Link points nowhere for now*/}
+      <a href="/blogs/beyond-tech">Beyond technology</a>
+    </li>
+  </ul>
+  <ThemeToggler />
+</nav>
+<style>
+  /* ... */
+  a {
+    color: var(--grey-400);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--grey-900);
+  }
+  a.active {
+    background: var(--grey-900);
+    color: var(--background);
+  }
+</style>
+<script>
+  const { pathname } = window.location;
+  const activeNavigationElement = document.querySelector(
+    `nav a[href="${pathname}"]`
+  );
+
+  if (activeNavigationElement) {
+    activeNavigationElement.classList.add("active");
+  }
+</script>
