@@ -61,7 +61,7 @@ const blogs = await Astro.glob<{
     {
       blogs.map((blog) => (
         <li class="blogs__list">
-          <a href={blog.url} class="blog__link">
+          <a href={blog.url} class="blog__link ">
             {blog.frontmatter.title}
           </a>
         </li>
